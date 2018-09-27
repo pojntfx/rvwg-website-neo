@@ -6,40 +6,20 @@ lang: de
 description: >-
   Webseite des Richard-von-Weizsäcker-Gymnasiums in Baiersbronn.
 keywords:
+  - RvWG
+  - RvWG Cloud
+  - RvWG Nextcloud
+  - RvWG Mensa
   - Baiersbronn
   - Gymnasium
   - SWAG
   - Schüler-Website-AG
   - G8
-  - RvWG
-  - RvWG Cloud
-  - RvWG Nextcloud
   - Richard von Weizsäcker
   - Oberdorf
-  - Nextcloud
   - Freie Software
   - Open Source
   - AGPL-3.0
 
 # Config
-baseurl: ""
-url: https://www.rvwg.tk/
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-collections:
-  pages:
-    output: true
-    permalink: /:path.html
-
-# Plugins
-plugins:
-  - jekyll-pwa-plugin
-  - jekyll-gzip
-
-# Progressive Web App
-pwa:
-  sw_src_filepath: js/service-worker.js
-  dest_js_directory: assets/js
+url: https://www.rvwg.tk
