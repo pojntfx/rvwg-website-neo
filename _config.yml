@@ -36,8 +36,6 @@ collections:
 
 # Plugins
 plugins:
-  - jekyll-admin
-  - jekyll-assets
   - jekyll-pwa-plugin
   - jekyll-gzip
 
