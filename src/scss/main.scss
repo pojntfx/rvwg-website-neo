@@ -30,6 +30,18 @@ $cell-height: 100px;
       white-space: nowrap;
     }
   }
+  &-agenda {
+    &-view {
+      overflow-x: auto;
+    }
+    &-table {
+      @extend .table;
+      @extend .table-hover;
+      & .rbc-agenda-date-cell {
+        white-space: nowrap;
+      }
+    }
+  }
   &-date-cell,
   &-time-gutter>&-timeslot-group {
     height: $cell-height;
