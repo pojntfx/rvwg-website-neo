@@ -17,7 +17,7 @@ module.exports = {
         short_name: "RvWG",
         start_url: "/",
         background_color: "#ffffff",
-        theme_color: "#ff7200",
+        theme_color: "#e0a800",
         display: "standalone",
         icon: "static/img/icon.png"
       }
