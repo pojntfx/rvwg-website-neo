@@ -19,27 +19,33 @@ const DefaultLayout = ({ children }) => (
         {
           title: "Home",
           to: "/",
-          icon: faHome
+          icon: faHome,
+          description: "Startseite mit einer Übersicht und Schnellzugriff."
         },
         {
           title: "Information",
           to: "/information",
-          icon: faInfo
+          icon: faInfo,
+          description: "Alles run um die Geschichte und Gegenwart des RvWG."
         },
         {
           title: "Organisation",
           to: "/organisation",
-          icon: faUsers
+          icon: faUsers,
+          description: "News, Termine und mehr."
         },
         {
           title: "Angebot",
           to: "/angebot",
-          icon: faStore
+          icon: faStore,
+          description:
+            "Wie der Unterricht am RvWG aufgebaut ist und die Stunden belegt sind."
         },
         {
           title: "Aktivitäten",
           to: "/aktivitaeten",
-          icon: faSun
+          icon: faSun,
+          description: "Arbeitsgemeinschaften, Ausflüge und mehr."
         }
       ]}
     />
