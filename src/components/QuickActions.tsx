@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Row, Col, InputGroup, FormControl } from "react-bootstrap";
+import { Row, Col, InputGroup, FormControl, Card } from "react-bootstrap";
 import {
   faCloud,
   faUtensils,
@@ -8,6 +8,7 @@ import {
 import { Button } from "./Button";
 
 interface IQuickActions {
+  title: string;
   leftButton: {
     content: string;
     href: string;
@@ -28,22 +29,25 @@ interface IQuickActions {
 }
 
 const QuickActions = (props: IQuickActions) => (
-  <Row>
-    <Col className="mb-3 mb-lg-0" lg={true}>
-      <Button {...props.leftButton} size="block" as="a" />
-    </Col>
-    <Col lg={true}>
-      <InputGroup className="mb-3">
-        <FormControl {...props.searchBar} />
-        <InputGroup.Append>
-          <Button {...props.searchButton} size="block" />
-        </InputGroup.Append>
-      </InputGroup>
-    </Col>
-    <Col lg={true}>
-      <Button {...props.rightButton} size="block" as="a" />
-    </Col>
-  </Row>
+  <Card body>
+    <Card.Title>{props.title}</Card.Title>
+    <Row>
+      <Col className="mb-3 mb-lg-0" lg={true}>
+        <Button {...props.leftButton} size="block" as="a" />
+      </Col>
+      <Col lg={true}>
+        <InputGroup className="mb-3">
+          <FormControl {...props.searchBar} />
+          <InputGroup.Append>
+            <Button {...props.searchButton} size="block" />
+          </InputGroup.Append>
+        </InputGroup>
+      </Col>
+      <Col lg={true}>
+        <Button {...props.rightButton} size="block" as="a" />
+      </Col>
+    </Row>
+  </Card>
 );
 
 export { QuickActions };
