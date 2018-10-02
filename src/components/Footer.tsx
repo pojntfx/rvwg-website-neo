@@ -3,6 +3,7 @@ import { Navbar as NavbarTemplate, Nav, Container } from "react-bootstrap";
 import { Link } from "./Link";
 import { Icon } from "./Icon";
 import styled from "styled-components";
+import { EasterEgg } from "./EasterEgg";
 
 const Navbar = styled(NavbarTemplate)`
   overflow-x: auto;
@@ -23,6 +24,7 @@ interface IFooter {
 
 const Footer = (props: IFooter) => (
   <Navbar bg="light" variant="primary" className="mt-3">
+    <EasterEgg />
     <Container className="px-0 px-sm-3">
       <Nav className="ml-auto mr-auto">
         {props.items.map(({ title, icon, to }, index) => (
