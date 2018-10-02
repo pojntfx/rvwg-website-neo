@@ -3,6 +3,7 @@ import { QuickActions } from "../components/QuickActions"
 import { Carousel } from "../components/Carousel"
 import { Calendar } from "../components/Calendar"
 import { News } from "../components/News"
+import { Row, Col } from "react-bootstrap"
 import {
   faCloud,
   faUtensils,
@@ -55,10 +56,16 @@ import {
   }}
 />
 
-<Calendar
-  title="Kalender"
-  calendarId="rvwgkalenderhomepage@gmail.com"
-  apiKey="AIzaSyBr-_E-pdSq46_pm78R-is4woIIFECjgho"
-/>
+<Row>
+  <Col sm={12} lg={8}>
+    <Calendar
+      title="Kalender"
+      calendarId="rvwgkalenderhomepage@gmail.com"
+      apiKey="AIzaSyBr-_E-pdSq46_pm78R-is4woIIFECjgho"
+    />
+  </Col>
 
-<News />
+  <Col sm={12} lg={4}>
+    <News />
+  </Col>
+</Row>
