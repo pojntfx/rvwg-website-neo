@@ -9,7 +9,7 @@ $defaultBorderRadius: 0.25rem;
     margin-bottom: 1rem;
     @extend .align-items-center;
     @extend .row;
-    &>* {
+    & > * {
       @extend .col-12;
       @extend .col-lg;
       @extend .justify-content-center; // Align today, back end next buttons to left
@@ -45,7 +45,7 @@ $defaultBorderRadius: 0.25rem;
     }
   }
   &-date-cell,
-  &-time-gutter>&-timeslot-group {
+  &-time-gutter > &-timeslot-group {
     height: $cell-height;
     border: 1px solid lighten($secondary, 30);
     border-right: 0 solid;
