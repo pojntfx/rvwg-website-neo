@@ -1,5 +1,6 @@
 import { Head } from "../components/Head"
 import { QuickActions } from "../components/QuickActions"
+import { Carousel } from "../components/Carousel"
 import {
   faCloud,
   faUtensils,
@@ -7,6 +8,29 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 <Head title="Home" />
+
+<Carousel
+  slides={[
+    {
+      imgSrc: "/img/slide1.png",
+      alt: "Bild des Pavillions/A-Gebäudes",
+      header: "Schule als Lebenshilfe",
+      description: "Wir bieten unseren Schülern eine lebenswerte Schulzeit."
+    },
+    {
+      imgSrc: "/img/slide2.png",
+      alt: "Bild des Schulhofes am Pavillion/A-Gebäude",
+      header: "Schule als Partner der Natur",
+      description: "Wir kooperieren mit dem Nationalpark Nordscharzwald."
+    },
+    {
+      imgSrc: "/img/slide3.png",
+      alt: "Bild des Schulhofes von oben zwischen C-, B- und A-Gebäude",
+      header: "Schule als Gemeinschaft",
+      description: "Wir sind mehr also nur eine Gruppe von Individuen."
+    }
+  ]}
+/>
 
 <QuickActions
   leftButton={{
