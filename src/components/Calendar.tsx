@@ -47,6 +47,7 @@ class Calendar extends Component<ICalendar> {
       <Card body className="mt-3">
         <Card.Title>Calendar</Card.Title>
         <BigCalendar
+          defaultView="agenda"
           views={["month", "agenda"]}
           localizer={localizer}
           events={this.state.events}
