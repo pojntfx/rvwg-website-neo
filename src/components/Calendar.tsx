@@ -4,6 +4,8 @@ import BigCalendarTemplate from "react-big-calendar";
 import * as moment from "moment";
 import { Card } from "react-bootstrap";
 import styled from "styled-components";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { Icon } from "./Icon";
 
 const localizer = BigCalendarTemplate.momentLocalizer(moment);
 
@@ -14,6 +16,7 @@ const BigCalendar = styled(BigCalendarTemplate)`
 interface ICalendar {
   calendarId: string;
   apiKey: string;
+  title: string;
 }
 
 const getEvents = async (calendarId, apiKey) => {
@@ -45,7 +48,10 @@ class Calendar extends Component<ICalendar> {
   render() {
     return (
       <Card body className="mt-3">
-        <Card.Title>Calendar</Card.Title>
+        <Card.Title>
+          <Icon icon={faCalendar} />
+          {this.props.title}
+        </Card.Title>
         <BigCalendar
           defaultView="agenda"
           views={["month", "agenda"]}

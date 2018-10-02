@@ -69,7 +69,11 @@ const Navbar = (props: INavbarProps) => (
           <OverlayTrigger
             trigger="hover"
             placement="bottom"
-            overlay={<Popover title={title}>{description}</Popover>}
+            overlay={
+              <Popover title={title} id="popover">
+                {description}
+              </Popover>
+            }
             key={index}
           >
             <NavTemplate.Link

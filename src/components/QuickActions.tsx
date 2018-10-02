@@ -1,11 +1,8 @@
 import * as React from "react";
 import { Row, Col, InputGroup, FormControl, Card } from "react-bootstrap";
-import {
-  faCloud,
-  faUtensils,
-  faSearch
-} from "@fortawesome/free-solid-svg-icons";
+import { faCompass } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "./Button";
+import { Icon } from "./Icon";
 
 interface IQuickActions {
   title: string;
@@ -30,7 +27,10 @@ interface IQuickActions {
 
 const QuickActions = (props: IQuickActions) => (
   <Card body>
-    <Card.Title>{props.title}</Card.Title>
+    <Card.Title>
+      <Icon icon={faCompass} />
+      {props.title}
+    </Card.Title>
     <Row>
       <Col className="mb-3 mb-lg-0" lg={true}>
         <Button {...props.leftButton} size="block" as="a" />
