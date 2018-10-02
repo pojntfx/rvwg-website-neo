@@ -27,6 +27,25 @@ const NavbarBrand = styled.img`
 const Nav = styled(NavTemplate)`
   & .nav-link {
     white-space: nowrap;
+    &.active {
+      position: relative;
+      &:after,
+      &:before {
+        bottom: -8px;
+        left: 50%;
+        border: solid transparent;
+        content: "";
+        position: absolute;
+        pointer-events: none;
+      }
+
+      &:after {
+        border-color: transparent;
+        border-bottom-color: white;
+        border-width: 13px;
+        margin-left: -13px;
+      }
+    }
   }
 `;
 
