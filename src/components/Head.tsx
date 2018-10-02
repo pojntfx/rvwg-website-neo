@@ -10,7 +10,7 @@ const Head = ({ title: pageTitle, ...otherProps }) => (
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>{pageTitle} | RvWG</title>
+    <title>{pageTitle} | Richard-von-Weizsäcker Gymnasium Baiersbronn</title>
   </Helmet>
 );
 
