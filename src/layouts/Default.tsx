@@ -2,6 +2,13 @@ import * as React from "react";
 import "../scss/main.scss";
 import { Container } from "react-bootstrap";
 import { Navbar } from "../components/Navbar";
+import {
+  faHome,
+  faInfo,
+  faUsers,
+  faStore,
+  faSun
+} from "@fortawesome/free-solid-svg-icons";
 
 const DefaultLayout = ({ children }) => (
   <>
@@ -11,23 +18,28 @@ const DefaultLayout = ({ children }) => (
       items={[
         {
           title: "Home",
-          to: "/"
+          to: "/",
+          icon: faHome
         },
         {
           title: "Information",
-          to: "/information"
+          to: "/information",
+          icon: faInfo
         },
         {
           title: "Organisation",
-          to: "/organisation"
+          to: "/organisation",
+          icon: faUsers
         },
         {
           title: "Angebot",
-          to: "/angebot"
+          to: "/angebot",
+          icon: faStore
         },
         {
           title: "Aktivitäten",
-          to: "/aktivitaeten"
+          to: "/aktivitaeten",
+          icon: faSun
         }
       ]}
     />
