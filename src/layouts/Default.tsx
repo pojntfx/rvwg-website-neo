@@ -7,8 +7,13 @@ import {
   faInfo,
   faUsers,
   faStore,
-  faSun
+  faSun,
+  faPhone,
+  faBalanceScale,
+  faImages,
+  faCode
 } from "@fortawesome/free-solid-svg-icons";
+import { Footer } from "../components/Footer";
 
 const DefaultLayout = ({ children }) => (
   <>
@@ -50,6 +55,14 @@ const DefaultLayout = ({ children }) => (
       ]}
     />
     <Container>{children}</Container>
+    <Footer
+      items={[
+        { title: "Kontakt", icon: faPhone, to: "/kontakt" },
+        { title: "Impressum", icon: faBalanceScale, to: "/impressum" },
+        { title: "Medienlizenz", icon: faImages, to: "/medien-lizenz" },
+        { title: "Codelizenz", icon: faCode, to: "/code-lizenz" }
+      ]}
+    />
   </>
 );
 
