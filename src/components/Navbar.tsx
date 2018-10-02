@@ -1,7 +1,12 @@
 import * as React from "react";
-import { Navbar as NavbarTemplate, Nav, Container } from "react-bootstrap";
+import {
+  Navbar as NavbarTemplate,
+  Nav as NavTemplate,
+  Container
+} from "react-bootstrap";
 import { Link } from "./Link";
 import styled from "styled-components";
+import { Icon } from "./Icon";
 
 const NavbarWrapper = styled(NavbarTemplate)`
   overflow-x: auto;
@@ -17,9 +22,16 @@ const NavbarBrand = styled.img`
   height: 24px;
 `;
 
+const Nav = styled(NavTemplate)`
+  & .nav-link {
+    white-space: nowrap;
+  }
+`;
+
 interface INavbarItem {
   title: string;
   to: string;
+  icon: any;
 }
 
 interface INavbarProps {
@@ -35,15 +47,16 @@ const Navbar = (props: INavbarProps) => (
         <NavbarBrand src={props.logoSrc} alt={props.title} />
       </NavbarTemplate.Brand>
       <Nav className="ml-auto">
-        {props.items.map(({ title, to }, index) => (
-          <Nav.Link
+        {props.items.map(({ title, icon, to }, index) => (
+          <NavTemplate.Link
             as={Link}
             to={to}
             getProps={isPartiallyActiveLink}
             key={index}
           >
+            <Icon icon={icon} />
             {title}
-          </Nav.Link>
+          </NavTemplate.Link>
         ))}
       </Nav>
     </Container>
