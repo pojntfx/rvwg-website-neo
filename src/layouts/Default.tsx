@@ -14,6 +14,18 @@ import {
   faCode
 } from "@fortawesome/free-solid-svg-icons";
 import { Footer } from "../components/Footer";
+import { injectGlobal } from "styled-components";
+
+injectGlobal`
+  body {
+    background-image: url(/img/bg.jpg);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+`;
 
 const DefaultLayout = ({ children }) => (
   <>
