@@ -9,6 +9,19 @@ module.exports = {
       }
     },
     "gatsby-plugin-typescript",
-    "gatsby-plugin-styled-components"
+    "gatsby-plugin-styled-components",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Richard-von-Weizsäcker Gymnasium",
+        short_name: "RvWG",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#ff7200",
+        display: "standalone",
+        icon: "static/img/icon.png"
+      }
+    },
+    "gatsby-plugin-offline"
   ]
 };
