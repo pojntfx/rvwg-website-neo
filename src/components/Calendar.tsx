@@ -10,7 +10,9 @@ import { Icon } from "./Icon";
 const localizer = BigCalendarTemplate.momentLocalizer(moment);
 
 const BigCalendar = styled(BigCalendarTemplate)`
-  min-height: 500px;
+  height: 700px;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 interface ICalendar {
