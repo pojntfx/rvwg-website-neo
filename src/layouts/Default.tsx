@@ -1,7 +1,37 @@
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
+import { Navbar } from "../components/Navbar";
 
-const DefaultLayout = ({ children }) => <Container>{children}</Container>;
+const DefaultLayout = ({ children }) => (
+  <>
+    <Navbar
+      title="RvWG"
+      items={[
+        {
+          title: "Home",
+          to: "/"
+        },
+        {
+          title: "Information",
+          to: "/information"
+        },
+        {
+          title: "Organisation",
+          to: "/organisation"
+        },
+        {
+          title: "Angebot",
+          to: "/angebot"
+        },
+        {
+          title: "Aktivitäten",
+          to: "/aktivitaeten"
+        }
+      ]}
+    />
+    <Container>{children}</Container>
+  </>
+);
 
 export default DefaultLayout;

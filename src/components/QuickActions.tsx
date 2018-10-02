@@ -28,7 +28,7 @@ interface IQuickActions {
 }
 
 const QuickActions = (props: IQuickActions) => (
-  <Row {...props}>
+  <Row>
     <Col className="mb-3 mb-lg-0" lg={true}>
       <Button {...props.leftButton} size="block" as="a" />
     </Col>
