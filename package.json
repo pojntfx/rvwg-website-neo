@@ -27,6 +27,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^0.15.4",
     "@mdx-js/tag": "^0.15.0",
+    "antd": "^3.10.0",
     "babel-plugin-styled-components": "^1.8.0",
     "gatsby": "^2.0.14",
     "gatsby-mdx": "^0.1.4",
