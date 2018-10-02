@@ -30,8 +30,13 @@ const Navbar = (props: INavbarProps) => (
         {props.title}
       </NavbarTemplate.Brand>
       <Nav className="ml-auto">
-        {props.items.map(({ title, to }) => (
-          <Nav.Link as={Link} to={to} getProps={isPartiallyActiveLink}>
+        {props.items.map(({ title, to }, index) => (
+          <Nav.Link
+            as={Link}
+            to={to}
+            getProps={isPartiallyActiveLink}
+            key={index}
+          >
             {title}
           </Nav.Link>
         ))}
