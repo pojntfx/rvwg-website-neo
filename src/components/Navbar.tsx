@@ -24,7 +24,7 @@ interface INavbarProps {
 }
 
 const Navbar = (props: INavbarProps) => (
-  <NavbarWrapper bg="warning" variant="light" sticky="top">
+  <NavbarWrapper bg="primary" variant="dark" sticky="top">
     <Container>
       <NavbarTemplate.Brand as={Link} to="/" getProps={isPartiallyActiveBrand}>
         {props.title}
