@@ -1,6 +1,7 @@
 import React from "react";
-import "antd/dist/antd.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
 
-const DefaultLayout = ({ children }) => <div>{children}</div>;
+const DefaultLayout = ({ children }) => <Container>{children}</Container>;
 
 export default DefaultLayout;
