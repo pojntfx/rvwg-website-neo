@@ -1,5 +1,29 @@
 import { Head } from "../components/Head"
+import { QuickActions } from "../components/QuickActions"
+import {
+  faCloud,
+  faUtensils,
+  faSearch
+} from "@fortawesome/free-solid-svg-icons";
 
-<Head title="Home"/>
+<Head title="Home" />
 
-# Hello, world!
+# Richard-von-Weizsäcker Gymnasium
+
+<QuickActions
+  leftButton={{
+    content: "Zur Nextcloud",
+    icon: faCloud
+  }}
+  searchBar={{
+    placeholder: "Suchanfrage"
+  }}
+  searchButton={{
+    content: "Suche",
+    icon: faSearch
+  }}
+  rightButton={{
+    content: "Zum Mensa-Planer",
+    icon: faUtensils
+  }}
+/>
