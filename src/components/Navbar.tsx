@@ -1,6 +1,6 @@
 import * as React from "react";
 import {
-  Navbar as NavbarTemplate,
+  Navbar as NavbarWrapper,
   Nav as NavTemplate,
   Container,
   Popover,
@@ -9,10 +9,6 @@ import {
 import { Link } from "./Link";
 import styled from "styled-components";
 import { Icon } from "./Icon";
-
-const NavbarWrapper = styled(NavbarTemplate)`
-  /* overflow-x: auto; */
-`;
 
 const isPartiallyActiveBrand = ({ isPartiallyCurrent }) =>
   isPartiallyCurrent ? { className: "navbar-brand active" } : null;
@@ -65,21 +61,21 @@ interface INavbarProps {
 const Navbar = (props: INavbarProps) => (
   <NavbarWrapper bg="primary" variant="dark" sticky="top">
     <Container className="px-0 px-sm-3">
-      <NavbarTemplate.Brand as={Link} to="/" getProps={isPartiallyActiveBrand}>
+      <NavbarWrapper.Brand as={Link} to="/" getProps={isPartiallyActiveBrand}>
         <NavbarBrand src={props.logoSrc} alt={props.title} />
-      </NavbarTemplate.Brand>
+      </NavbarWrapper.Brand>
       <Nav className="ml-auto">
         {props.items.map(({ title, icon, description, to }, index) => (
           <OverlayTrigger
             trigger="hover"
             placement="bottom"
             overlay={<Popover title={title}>{description}</Popover>}
+            key={index}
           >
             <NavTemplate.Link
               as={Link}
               to={to}
               getProps={isPartiallyActiveLink}
-              key={index}
             >
               <Icon icon={icon} />
               <span className="d-none d-md-inline">{title}</span>
