@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Navbar as NavbarTemplate, Nav } from "react-bootstrap";
+import { Navbar as NavbarTemplate, Nav, Container } from "react-bootstrap";
 import { Link } from "./Link";
 import styled from "styled-components";
 
@@ -25,16 +25,18 @@ interface INavbarProps {
 
 const Navbar = (props: INavbarProps) => (
   <NavbarWrapper bg="warning" variant="light" sticky="top">
-    <NavbarTemplate.Brand as={Link} to="/" getProps={isPartiallyActiveBrand}>
-      {props.title}
-    </NavbarTemplate.Brand>
-    <Nav className="ml-auto">
-      {props.items.map(({ title, to }) => (
-        <Nav.Link as={Link} to={to} getProps={isPartiallyActiveLink}>
-          {title}
-        </Nav.Link>
-      ))}
-    </Nav>
+    <Container>
+      <NavbarTemplate.Brand as={Link} to="/" getProps={isPartiallyActiveBrand}>
+        {props.title}
+      </NavbarTemplate.Brand>
+      <Nav className="ml-auto">
+        {props.items.map(({ title, to }) => (
+          <Nav.Link as={Link} to={to} getProps={isPartiallyActiveLink}>
+            {title}
+          </Nav.Link>
+        ))}
+      </Nav>
+    </Container>
   </NavbarWrapper>
 );
 
