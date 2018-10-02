@@ -1,4 +1,61 @@
 // Your variable overrides
 $primary: #ff7200;
-
 @import "../../node_modules/bootstrap/scss/bootstrap";
+// Overwrite BigCalendar styles
+$cell-height: 100px;
+.rbc {
+  &-toolbar {
+    margin-bottom: 1rem;
+    @extend .align-items-center;
+    @extend .row;
+    &>* {
+      @extend .col-12;
+      @extend .col-lg;
+      @extend .justify-content-center; // Align today, back end next buttons to left
+      &:first-child {
+        @extend .d-flex;
+        @extend .justify-content-lg-start;
+      } // Align date label to center
+      &:nth-child(2) {
+        @extend .d-flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      } // Align scope control to end
+      &:last-child {
+        @extend .d-flex;
+        @extend .justify-content-lg-end;
+      }
+    }
+    &-label {
+      white-space: nowrap;
+    }
+  }
+  &-date-cell,
+  &-time-gutter>&-timeslot-group {
+    height: $cell-height;
+  }
+  &-current {
+    border: 1px solid;
+    border-color: $primary;
+    border-radius: 0.25rem;
+  }
+  &-btn-group {
+    @extend .btn-group;
+    & button {
+      @extend .btn;
+      @extend .btn-outline-primary;
+    }
+    & button.rbc-active {
+      @extend .btn-primary;
+    }
+  }
+  &-header,
+  &-row-content,
+  &-date-cell {
+    @extend .col;
+  }
+  &-row,
+  &-month-row {
+    @extend .row;
+  }
+}
