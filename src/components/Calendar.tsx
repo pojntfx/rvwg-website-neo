@@ -24,8 +24,8 @@ const getEvents = async (calendarId, apiKey) => {
   const response = await fetch(url);
   const { items } = await response.json();
   const events = items.map(event => ({
-    start: event.start.dateTime,
-    end: event.end.dateTime,
+    start: event.start.dateTime || event.start.date,
+    end: event.end.dateTime || event.end.date,
     title: event.summary
   }));
   return events;
@@ -47,6 +47,7 @@ class Calendar extends Component<ICalendar> {
       <Card body className="mt-3">
         <Card.Title>Calendar</Card.Title>
         <BigCalendar
+          views={["month", "agenda"]}
           localizer={localizer}
           events={this.state.events}
           startAccessor="start"
