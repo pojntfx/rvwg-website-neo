@@ -10,6 +10,7 @@ import { Button } from "./Button";
 interface IQuickActions {
   leftButton: {
     content: string;
+    href: string;
     icon: any;
   };
   searchBar: {
@@ -21,6 +22,7 @@ interface IQuickActions {
   };
   rightButton: {
     content: string;
+    href: string;
     icon: any;
   };
 }
@@ -28,7 +30,7 @@ interface IQuickActions {
 const QuickActions = (props: IQuickActions) => (
   <Row {...props}>
     <Col className="mb-3 mb-lg-0" lg={true}>
-      <Button {...props.leftButton} size="block" />
+      <Button {...props.leftButton} size="block" as="a" />
     </Col>
     <Col lg={true}>
       <InputGroup className="mb-3">
@@ -39,7 +41,7 @@ const QuickActions = (props: IQuickActions) => (
       </InputGroup>
     </Col>
     <Col lg={true}>
-      <Button {...props.rightButton} size="block" />
+      <Button {...props.rightButton} size="block" as="a" />
     </Col>
   </Row>
 );
