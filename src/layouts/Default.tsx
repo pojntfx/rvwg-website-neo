@@ -6,6 +6,7 @@ import { Navbar } from "../components/Navbar";
 const DefaultLayout = ({ children }) => (
   <>
     <Navbar
+      logoSrc="/img/logo.png"
       title="RvWG"
       items={[
         {

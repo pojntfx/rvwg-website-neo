@@ -13,21 +13,26 @@ const isPartiallyActiveBrand = ({ isPartiallyCurrent }) =>
 const isPartiallyActiveLink = ({ isPartiallyCurrent }) =>
   isPartiallyCurrent ? { className: "nav-link active" } : null;
 
+const NavbarBrand = styled.img`
+  height: 24px;
+`;
+
 interface INavbarItem {
   title: string;
   to: string;
 }
 
 interface INavbarProps {
+  logoSrc: string;
   title: string;
   items: INavbarItem[];
 }
 
 const Navbar = (props: INavbarProps) => (
   <NavbarWrapper bg="primary" variant="dark" sticky="top">
-    <Container>
+    <Container className="px-0 px-sm-3">
       <NavbarTemplate.Brand as={Link} to="/" getProps={isPartiallyActiveBrand}>
-        {props.title}
+        <NavbarBrand src={props.logoSrc} alt={props.title} />
       </NavbarTemplate.Brand>
       <Nav className="ml-auto">
         {props.items.map(({ title, to }, index) => (
