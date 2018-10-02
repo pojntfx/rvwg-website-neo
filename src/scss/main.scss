@@ -3,6 +3,7 @@ $primary: #ff7200;
 @import "../../node_modules/bootstrap/scss/bootstrap";
 // Overwrite BigCalendar styles
 $cell-height: 100px;
+$defaultBorderRadius: 0.25rem;
 .rbc {
   &-toolbar {
     margin-bottom: 1rem;
@@ -28,6 +29,7 @@ $cell-height: 100px;
     }
     &-label {
       white-space: nowrap;
+      font-weight: bold;
     }
   }
   &-agenda {
@@ -45,11 +47,21 @@ $cell-height: 100px;
   &-date-cell,
   &-time-gutter>&-timeslot-group {
     height: $cell-height;
+    border: 1px solid lighten($secondary, 30);
+    border-right: 0 solid;
+    &:last-child {
+      border-top-right-radius: $defaultBorderRadius;
+      border-bottom-right-radius: $defaultBorderRadius;
+      border-right: 1px solid lighten($secondary, 30);
+    }
+    &:first-child {
+      border-top-left-radius: $defaultBorderRadius;
+      border-bottom-left-radius: $defaultBorderRadius;
+    }
   }
   &-current {
     border: 1px solid;
     border-color: $primary;
-    border-radius: 0.25rem;
   }
   &-btn-group {
     @extend .btn-group;
@@ -66,8 +78,22 @@ $cell-height: 100px;
   &-date-cell {
     @extend .col;
   }
+  &-header {
+    text-align: center;
+    font-weight: bold;
+  }
   &-row,
   &-month-row {
     @extend .row;
+  }
+  &-month {
+    &-view {
+      padding-left: 1rem;
+      overflow-x: auto;
+    }
+  }
+  &-event {
+    @extend .btn;
+    white-space: normal;
   }
 }
