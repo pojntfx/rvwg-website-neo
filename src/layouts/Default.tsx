@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../scss/main.scss";
-import { Container, Card } from "react-bootstrap";
+import { Container, Card, Image } from "react-bootstrap";
 import { Navbar } from "../components/Navbar";
 import {
   faHome,
@@ -15,6 +15,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Footer } from "../components/Footer";
 import { injectGlobal } from "styled-components";
+import { MDXProvider } from "@mdx-js/tag";
+import { Link } from "../components/Link";
 
 injectGlobal`
   body {
@@ -34,7 +36,28 @@ interface IDefaultLayout {
 }
 
 const DefaultLayout = ({ location, children, noWrapper }: IDefaultLayout) => (
-  <>
+  <MDXProvider
+    components={{
+      a: ({ href, children, ...otherProps }) => (
+        <Link to={href} {...otherProps}>
+          {children}
+        </Link>
+      ),
+      img: ({ src, ...otherProps }) => (
+        <Link to={src}>
+          <Image fluid src={src} {...otherProps} />
+        </Link>
+      ),
+      blockquote: ({ children, ...otherProps }) => (
+        <Card body {...otherProps}>
+          z
+          <Card.Text>
+            <i>{children}</i>
+          </Card.Text>
+        </Card>
+      )
+    }}
+  >
     <Navbar
       location={location}
       logoSrc="/img/logo.png"
@@ -91,7 +114,7 @@ const DefaultLayout = ({ location, children, noWrapper }: IDefaultLayout) => (
         { title: "Codelizenz", icon: faCode, to: "/code-lizenz" }
       ]}
     />
-  </>
+  </MDXProvider>
 );
 
 export default DefaultLayout;
