@@ -9,12 +9,11 @@ import {
 import { Link } from "./Link";
 import styled from "styled-components";
 import { Icon } from "./Icon";
+import { Button } from "./Button";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 const isPartiallyActiveBrand = ({ isPartiallyCurrent }) =>
   isPartiallyCurrent ? { className: "navbar-brand active" } : null;
-
-const isPartiallyActiveLink = ({ isPartiallyCurrent }) =>
-  isPartiallyCurrent ? { className: "nav-link active" } : null;
 
 const NavbarBrand = styled.img`
   height: 19px;
@@ -56,6 +55,7 @@ interface INavbarProps {
   logoSrc: string;
   title: string;
   items: INavbarItem[];
+  location: any;
 }
 
 const Navbar = (props: INavbarProps) => (
@@ -67,19 +67,27 @@ const Navbar = (props: INavbarProps) => (
       <Nav className="ml-auto">
         {props.items.map(({ title, icon, description, to }, index) => (
           <OverlayTrigger
-            trigger="hover"
+            trigger="click"
+            rootClose
             placement="bottom"
             overlay={
               <Popover title={title} id="popover">
                 {description}
+                <br />
+                <Link to={to}>
+                  <Button
+                    icon={faLink}
+                    content={`${title} besuchen`}
+                    className="mt-2"
+                    size="block"
+                  />
+                </Link>
               </Popover>
             }
             key={index}
           >
             <NavTemplate.Link
-              as={Link}
-              to={to}
-              getProps={isPartiallyActiveLink}
+              className={props.location.pathname === to ? "active" : undefined}
             >
               <Icon icon={icon} />
               <span className="d-none d-md-inline">{title}</span>
