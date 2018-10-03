@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../scss/main.scss";
-import { Container, Card, Image } from "react-bootstrap";
+import { Container, Card, Image, Table } from "react-bootstrap";
 import { Navbar } from "../components/Navbar";
 import {
   faHome,
@@ -52,6 +52,11 @@ const DefaultLayout = ({ location, children, noWrapper }: IDefaultLayout) => (
         <blockquote className="blockquote" {...otherProps}>
           <i>{children}</i>
         </blockquote>
+      ),
+      table: ({ children, ...otherProps }) => (
+        <Table responsive {...otherProps}>
+          {children}
+        </Table>
       )
     }}
   >
