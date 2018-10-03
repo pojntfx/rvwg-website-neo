@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../scss/main.scss";
-import { Container } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import { Navbar } from "../components/Navbar";
 import {
   faHome,
@@ -27,7 +27,13 @@ injectGlobal`
   }
 `;
 
-const DefaultLayout = ({ location, children }) => (
+interface IDefaultLayout {
+  location: any;
+  children: any;
+  noWrapper?: boolean;
+}
+
+const DefaultLayout = ({ location, children, noWrapper }: IDefaultLayout) => (
   <>
     <Navbar
       location={location}
@@ -67,7 +73,16 @@ const DefaultLayout = ({ location, children }) => (
         }
       ]}
     />
-    <Container>{children}</Container>
+
+    <Container>
+      {noWrapper ? (
+        children
+      ) : (
+        <Card body className="mt-3">
+          {children}
+        </Card>
+      )}
+    </Container>
     <Footer
       items={[
         { title: "Kontakt", icon: faPhone, to: "/kontakt" },

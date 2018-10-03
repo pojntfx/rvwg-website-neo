@@ -87,7 +87,15 @@ const Navbar = (props: INavbarProps) => (
             key={index}
           >
             <NavTemplate.Link
-              className={props.location.pathname === to ? "active" : undefined}
+              className={
+                to === "/"
+                  ? props.location.pathname === to
+                    ? "active"
+                    : undefined
+                  : props.location.pathname.includes(to)
+                    ? "active"
+                    : undefined
+              }
             >
               <Icon icon={icon} />
               <span className="d-none d-md-inline">{title}</span>
