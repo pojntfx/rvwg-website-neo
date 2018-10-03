@@ -86,6 +86,21 @@ class Calendar extends Component<ICalendar> {
                   events={getEvents(data.items)}
                   startAccessor="start"
                   endAccessor="end"
+                  culture="de"
+                  messages={{
+                    today: "Heute",
+                    previous: "Zurück",
+                    next: "Weiter",
+                    month: "Monat",
+                    agenda: "Tagesablauf",
+                    date: "Datum",
+                    time: "Zeit",
+                    event: "Ereignis"
+                  }}
+                  formats={{
+                    agendaDateFormat: (date, culture, localizer) =>
+                      localizer.format(date, "dd.MM.YYYY", culture)
+                  }}
                 />
               )}
             </div>
