@@ -27,9 +27,10 @@ injectGlobal`
   }
 `;
 
-const DefaultLayout = ({ children }) => (
+const DefaultLayout = ({ location, children }) => (
   <>
     <Navbar
+      location={location}
       logoSrc="/img/logo.png"
       title="RvWG"
       items={[

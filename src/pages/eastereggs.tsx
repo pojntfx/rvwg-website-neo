@@ -5,7 +5,7 @@ import { Head } from "../components/Head";
 import { navigate } from "gatsby";
 
 const EasterEggs = ({ location }) => (
-  <DefaultLayout>
+  <DefaultLayout location={location}>
     <Head title="Easter Eggs" />
     {/* Double protection: Only show modal if location is given and if it is not, navigate back to home - 
     this is necessary to prevent the background from appearing first! */}
