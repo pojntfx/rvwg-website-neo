@@ -38,6 +38,7 @@
     "@types/styled-components": "^3.0.1",
     "babel-plugin-styled-components": "^1.8.0",
     "bootstrap": "^4.1.3",
+    "cldr-data": "^33.0.0",
     "gatsby": "^2.0.14",
     "gatsby-link": "^2.0.3",
     "gatsby-mdx": "^0.1.4",
@@ -48,7 +49,8 @@
     "gatsby-plugin-styled-components": "^3.0.0",
     "gatsby-plugin-typescript": "^2.0.0",
     "gatsby-source-filesystem": "^2.0.1",
-    "moment": "^2.22.2",
+    "globalize": "^1.4.0",
+    "iana-tz-data": "^2017.1.0",
     "node-sass": "^4.9.3",
     "react": "^16.5.2",
     "react-big-calendar": "^0.20.1",
@@ -64,6 +66,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "core-js": "^2.5.7"
+    "core-js": "^2.5.7",
+    "globalize-webpack-plugin": "^3.0.0"
   }
 }

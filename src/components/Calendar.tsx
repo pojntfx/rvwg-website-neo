@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Component } from "react";
 import BigCalendarTemplate from "react-big-calendar";
-import * as moment from "moment";
 import { Card } from "react-bootstrap";
 import styled from "styled-components";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { Icon } from "./Icon";
+import * as globalize from "../../.tmp-globalize-webpack/dev-i18n-data";
 
-const localizer = BigCalendarTemplate.momentLocalizer(moment);
+const localizer = BigCalendarTemplate.globalizeLocalizer(globalize);
 
 const BigCalendar = styled(BigCalendarTemplate)`
   height: 700px;
@@ -29,8 +29,8 @@ const getEvents = async (calendarId, apiKey) => {
   const response = await fetch(url);
   const { items } = await response.json();
   const events = items.map(event => ({
-    start: event.start.dateTime || event.start.date,
-    end: event.end.dateTime || event.end.date,
+    start: new Date(event.start.dateTime) || new Date(event.start.date),
+    end: new Date(event.end.dateTime) || new Date(event.end.date),
     title: event.summary
   }));
   return events;
