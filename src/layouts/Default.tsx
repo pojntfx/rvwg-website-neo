@@ -49,12 +49,9 @@ const DefaultLayout = ({ location, children, noWrapper }: IDefaultLayout) => (
         </Link>
       ),
       blockquote: ({ children, ...otherProps }) => (
-        <Card body {...otherProps}>
-          z
-          <Card.Text>
-            <i>{children}</i>
-          </Card.Text>
-        </Card>
+        <blockquote className="blockquote" {...otherProps}>
+          <i>{children}</i>
+        </blockquote>
       )
     }}
   >
