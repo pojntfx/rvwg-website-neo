@@ -8,7 +8,14 @@ import {
   faCloud,
   faUtensils,
   faSearch
-} from "@fortawesome/free-solid-svg-icons";
+} from "@fortawesome/free-solid-svg-icons"
+import DefaultLayout from "../layouts/Default.tsx"
+
+export default ({ location, children }) => (
+  <DefaultLayout location={location} noWrapper>
+    {children}
+  </DefaultLayout>
+)
 
 <Head title="Home" />
 
